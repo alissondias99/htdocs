@@ -75,8 +75,49 @@
     ?>
 
     <?php 
-        // Exemplo de foreach
+        // Exemplo de foreach (especializado em arrays e objetos)
+        $moveis = ['Geladeira', 'Fogão', 'Microondas', 'Sofá'];
+
+        echo '<pre>';
+        print_r($moveis);
+        echo '<pre>';
+
+        foreach($moveis as $movel){
+            echo $movel . '<br>';
+        }
+
+        $funcionarios = array(
+            array('nome' => 'João', 'salario' => 2000, 'Sexualidade' => 'M'),
+            array('nome' => 'Maria', 'salario' => 3000),
+            array('nome' => 'Pedro', 'salario' => 4000),
+            array('nome' => 'Ana', 'salario' => 5000),
+        );
+        echo '<pre>';
+        print_r($funcionarios);
+        echo '<pre>';
+
+        foreach($funcionarios as $idx => $funcionario){
+            foreach($funcionario as $idx2 => $salario ){
+                echo "$idx2 - $salario <br>";
+            }
+            echo '<hr>';
+        }
+    ?>
+
+    <?php 
+        // Atividade
+
+        define("INFERIOR",1);
+        define("SUPERIOR",60);
+        $num = 0;
+        echo "Os números sorteados foram:";
+        while ($num <6){
+            $numero = rand(INFERIOR, SUPERIOR);
+            $num++;
+            echo $numero. ' ';
+        }
         
+    
     ?>
 </body>
 </html>
